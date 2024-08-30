@@ -26,7 +26,7 @@ def get_channel_by_id(id: UUID):
     except HTTPException as e:
         raise e  
     except Exception as e:
-        logger.error(f"Unexpected error: {str(e)}")
+        logger.error(f"Unexpected error while Get channel by Id: {str(e)}")
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Server Error")
         
 @router.post("/", response_model=ChannelResponse)
